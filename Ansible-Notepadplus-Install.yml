@@ -1,0 +1,14 @@
+---
+- name: Installing Software
+  hosts: windows-LAB201 
+ 
+  tasks:
+    - name: Download the Notepad plus
+      win_get_url:
+        url: https://github.com/notepad-plus-plus/notepad-plus-plus/releases/download/v8.5.4/npp.8.5.4.Installer.x64.exe
+        dest: C:\Auto Software\npp.8.5.4.Installer.x64.exe
+
+    - name: Install MSI
+      win_package: 
+        path: C:\Auto Software\npp.8.5.4.Installer.x64.exe
+        state: present
