@@ -1,0 +1,1 @@
+Ping.exe -t www.google.com | ForEach {"{0} - {1}" -f (Get-Date),$_} > C:\Pinglogs\result.txt
